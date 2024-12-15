@@ -2,14 +2,13 @@ pipeline {
     agent any
 
     environment {
-        NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJS installations'
+        NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
     }
 
     stages {
         stage('Checkout') {
             steps {
                 script {
-                    // Checkout the repository
                     git 'https://github.com/HarshitaNagar24/nodejs-app.git'
                 }
             }
@@ -18,7 +17,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Install Node.js dependencies
                     sh 'npm install'
                 }
             }
@@ -27,7 +25,6 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Run tests (you can replace this with actual tests in your app)
                     sh 'npm test'
                 }
             }
@@ -36,7 +33,6 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Build the application (e.g., if you were building assets)
                     echo 'Building application...'
                 }
             }
@@ -45,7 +41,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Deploy to a server (mock deployment here)
                     echo 'Deploying application...'
                 }
             }
