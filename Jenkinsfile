@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the repository
-                    git 'https://github.com/yourusername/nodejs-app.git'
+                    git 'https://github.com/HarshitaNagar24/nodejs-app.git'
                 }
             }
         }
